@@ -1,0 +1,217 @@
+{
+    "key": "group_product",
+    "title": "Поля товара",
+    "fields": [
+        {
+            "key": "field_product_price",
+            "label": "Ціна",
+            "name": "product_price",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "Введіть ціну товару",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "грн",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_product_currency",
+            "label": "Валюта",
+            "name": "product_currency",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Виберіть валюту",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "UAH": "Гривня (UAH)",
+                "USD": "Долар (USD)",
+                "EUR": "Євро (EUR)"
+            },
+            "default_value": "UAH",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_product_sku",
+            "label": "Артикул",
+            "name": "product_sku",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Артикул товару",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_product_characteristics",
+            "label": "Характеристики",
+            "name": "product_characteristics",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Додайте характеристики товару",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Додати характеристику",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_characteristic_name",
+                    "label": "Назва",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_product_characteristics"
+                },
+                {
+                    "key": "field_characteristic_value",
+                    "label": "Значення",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_product_characteristics"
+                }
+            ]
+        },
+        {
+            "key": "field_product_gallery",
+            "label": "Галерея зображень",
+            "name": "product_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Додайте зображення товару",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": 0,
+            "max": 0,
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_product_documents",
+            "label": "Документи",
+            "name": "product_documents",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "Завантажте документи товару (PDF, DOC, etc.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": "pdf,doc,docx"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766095224
+}

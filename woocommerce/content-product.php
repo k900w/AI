@@ -1,0 +1,78 @@
+<?php
+/**
+ * The template for displaying product content within loops
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 3.6.0
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+global $product;
+
+// Ensure visibility
+if ( empty( $product ) || ! $product->is_visible() ) {
+    return;
+}
+?>
+
+<article <?php wc_product_class( 'product-card', $product ); ?>>
+    <div class="product-card__image">
+        <?php
+        /**
+         * Hook: woocommerce_before_shop_loop_item_title.
+         *
+         * @hooked woocommerce_show_product_loop_sale_flash - 10
+         * @hooked woocommerce_template_loop_product_thumbnail - 10
+         */
+        do_action( 'woocommerce_before_shop_loop_item_title' );
+        ?>
+    </div>
+
+    <div class="product-card__content">
+        <?php
+        /**
+         * Hook: woocommerce_shop_loop_item_title.
+         *
+         * @hooked woocommerce_template_loop_product_title - 10
+         */
+        do_action( 'woocommerce_shop_loop_item_title' );
+        ?>
+
+        <?php
+        // ACF поля
+        $subtitle = get_field('product_subtitle', $product->get_id());
+        if ($subtitle) :
+            ?>
+            <div class="product-card__subtitle"><?php echo esc_html($subtitle); ?></div>
+            <?php
+        endif;
+        ?>
+
+        <?php
+        /**
+         * Hook: woocommerce_after_shop_loop_item_title.
+         *
+         * @hooked woocommerce_template_loop_rating - 5
+         * @hooked woocommerce_template_loop_price - 10
+         */
+        do_action( 'woocommerce_after_shop_loop_item_title' );
+        ?>
+    </div>
+
+    <div class="product-card__footer">
+        <?php
+        /**
+         * Hook: woocommerce_after_shop_loop_item.
+         *
+         * @hooked woocommerce_template_loop_product_link_close - 5
+         * @hooked woocommerce_template_loop_add_to_cart - 10
+         */
+        do_action( 'woocommerce_after_shop_loop_item' );
+        ?>
+    </div>
+</article>
+
