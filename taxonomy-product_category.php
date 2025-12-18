@@ -100,6 +100,246 @@ if ($taxonomy === 'product_cat') {
         width: 20px;
         height: 20px;
     }
+
+    .products-grid--catalog {
+        gap: 40px 30px;
+    }
+
+    .product-card--catalog {
+        border-radius: 0;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .product-card--catalog .product-card__image {
+        height: 190px;
+        background: #fff;
+    }
+
+    .product-card--catalog .product-card__image img {
+        padding: 10px;
+    }
+
+    .product-card--catalog .product-card__title a {
+        color: #000;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .product-card--catalog .product-card__subtitle {
+        color: #333;
+        font-size: 14px;
+    }
+
+    .product-card__brand {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    .product-card__brand-label {
+        color: #000;
+    }
+
+    .product-card__brand-name {
+        color: #e30f1b;
+        text-decoration: underline;
+    }
+
+    .product-card--catalog .product-card__footer {
+        padding: 0 20px 20px;
+        border-top: none;
+    }
+
+    .product-card--catalog .product-card__btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 0;
+        text-transform: none;
+    }
+
+    .product-card--horizontal {
+        display: flex;
+        gap: 30px;
+        background: #fff;
+        padding: 0px;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+        margin-bottom: 40px;
+        max-height: 238px;
+        flex-direction: row;
+    }
+
+    /* Левая часть */
+    .product-card__media {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+
+    .product-card__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Правая часть */
+    .product-card__body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Заголовок */
+    .product-card__title a {
+        color: #e30f1b;
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .product-card__title a:hover {
+        text-decoration: underline;
+    }
+
+    /* Подзаголовок / описание */
+    .product-card__subtitle,
+    .product-card__excerpt {
+        margin-top: 10px;
+        color: #444;
+        font-size: 14px;
+    }
+
+    /* Нижний блок */
+    .product-card__actions {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+
+    /* Чекбоксы */
+    .product-card__checkbox {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .product-card__checkbox input {
+        width: 18px;
+        height: 18px;
+        accent-color: #e30f1b;
+    }
+
+    /* Кнопка */
+    .product-card__btn {
+        margin-left: auto;
+        background: #e30f1b;
+        color: #fff;
+        padding: 12px 30px;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 2px;
+        transition: background .3s;
+    }
+
+    .product-card__btn:hover {
+        background: #c00e18;
+    }
+
+    @media (max-width: 768px) {
+        .product-card--horizontal {
+            flex-direction: column;
+        }
+
+        .product-card__media {
+            max-width: 100%;
+        }
+
+        .product-card__btn {
+            margin-left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* ===== PRODUCT SLIDER ===== */
+    .product-slider {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        min-height: 280px;
+    }
+
+    .product-slider__track {
+        display: flex;
+        transition: transform 0.4s ease;
+        height: 100%;
+    }
+
+    .product-slider__slide {
+        min-width: 100%;
+        height: 100%;
+    }
+
+    .product-slider__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Навигация */
+    .product-slider__nav {
+        position: absolute;
+        top: 44%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 0px;
+        background: rgba(227, 15, 27, 0.95);
+        color: #fff;
+        border: none;
+        font-size: 26px;
+        line-height: 42px;
+        cursor: pointer;
+        z-index: 2;
+        transition: background 0.3s, opacity 0.3s;
+    }
+
+    .product-slider__nav:hover {
+        background: #c00e18;
+    }
+
+    .product-slider__nav--prev {
+        left: 0px;
+    }
+
+    .product-slider__nav--next {
+        right: 0px;
+    }
+
+    /* Скрываем стрелки если один слайд */
+    .product-slider[data-slides="1"] .product-slider__nav {
+        display: none;
+    }
+
+    .woocommerce img,
+    .woocommerce-page img {
+        height: 238px;
+        max-width: 100%;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .product-slider {
+            min-height: 220px;
+        }
+    }
     
     /* Скрытие товаров при поиске */
     .product-card.hidden {
@@ -635,6 +875,7 @@ $category_bg_url = is_array($category_bg) ? $category_bg['url'] : $category_bg;
             <?php
             // Проверяем, является ли это категорией "техника" (по slug или названию)
             $is_technika = false;
+            $is_zapchasti = false;
             $term_slug = strtolower($term->slug);
             $term_name = strtolower($term->name);
             
@@ -661,6 +902,27 @@ $category_bg_url = is_array($category_bg) ? $category_bg['url'] : $category_bg;
                             strpos($ancestor_name, 'техніка') !== false ||
                             strpos($ancestor_name, 'техн') !== false) {
                             $is_technika = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (strpos($term_slug, 'zapchasti') !== false ||
+                strpos($term_name, 'запчаст') !== false ||
+                strpos($term_name, 'запчастини') !== false) {
+                $is_zapchasti = true;
+            } else {
+                $ancestors = get_ancestors($term->term_id, $taxonomy);
+                foreach ($ancestors as $ancestor_id) {
+                    $ancestor = get_term($ancestor_id, $taxonomy);
+                    if ($ancestor && !is_wp_error($ancestor)) {
+                        $ancestor_slug = strtolower($ancestor->slug);
+                        $ancestor_name = strtolower($ancestor->name);
+                        if (strpos($ancestor_slug, 'zapchasti') !== false ||
+                            strpos($ancestor_name, 'запчаст') !== false ||
+                            strpos($ancestor_name, 'запчастини') !== false) {
+                            $is_zapchasti = true;
                             break;
                         }
                     }
@@ -836,7 +1098,7 @@ $category_bg_url = is_array($category_bg) ? $category_bg['url'] : $category_bg;
                 <div class="category-products-slider owl-carousel">
             <?php else : ?>
                 <!-- Обычная сетка для других категорий -->
-                <div class="products-flex">
+                <div class="products-grid<?php echo $is_zapchasti ? ' products-grid--catalog' : ''; ?>">
             <?php endif; ?>
                 <?php
                 while (have_posts()) : the_post();
@@ -889,291 +1151,155 @@ $category_bg_url = is_array($category_bg) ? $category_bg['url'] : $category_bg;
                         </div>
                     <?php else : ?>
 
-                    <style>
-.product-card--horizontal {
-    display: flex;
-    gap: 30px;
-    background: #fff;
-    padding: 0px;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
-    margin-bottom: 40px;
-    max-height:238px;
-    flex-direction: row;
-}
+                    <?php if ($is_zapchasti) : ?>
+                        <?php
+                        $brand = get_field('product_brand');
+                        if (!$brand) {
+                            $brand_terms = get_the_terms(get_the_ID(), 'product_brand');
+                            if (!empty($brand_terms) && !is_wp_error($brand_terms)) {
+                                $brand = $brand_terms[0]->name;
+                            }
+                        }
+                        ?>
+                        <article class="product-card product-card--catalog"
+                            data-sku="<?php echo esc_attr($sku ?: ''); ?>"
+                            data-model="<?php echo esc_attr($model); ?>"
+                            data-type="<?php echo esc_attr($type); ?>"
+                            data-agregatirovanie="<?php echo esc_attr($agregatirovanie); ?>"
+                            data-kolich-estvoryadov="<?php echo esc_attr($kolich_estvoryadov); ?>"
+                            data-rasstoyaniemezhdu-ryadami="<?php echo esc_attr($rasstoyaniemezhdu_ryadami); ?>">
+                            <div class="product-card__image">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_post_thumbnail('product-thumb', array('class' => 'lazyload')); ?>
+                                    </a>
+                                <?php else : ?>
+                                    <div class="product-card__image--placeholder">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
+                                        </svg>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-/* Левая часть */
-.product-card__media {
-    flex: 0 0 40%;
-    max-width: 40%;
-}
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h3>
 
-.product-card__image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    display: block;
-}
+                                <?php if ($subtitle) : ?>
+                                    <div class="product-card__subtitle"><?php echo esc_html($subtitle); ?></div>
+                                <?php endif; ?>
 
-/* Правая часть */
-.product-card__body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
+                                <?php if ($brand) : ?>
+                                    <div class="product-card__brand">
+                                        <span class="product-card__brand-label">Бренд: </span>
+                                        <span class="product-card__brand-name"><?php echo esc_html($brand); ?></span>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-/* Заголовок */
-.product-card__title a {
-    color: #e30f1b;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
-}
+                            <div class="product-card__footer">
+                                <a href="<?php the_permalink(); ?>" class="product-card__btn">У кошик</a>
+                            </div>
+                        </article>
+                    <?php else : ?>
+                        <article class="product-card product-card--horizontal"
+                            data-sku="<?php echo esc_attr($sku ?: ''); ?>"
+                            data-model="<?php echo esc_attr($model); ?>"
+                            data-type="<?php echo esc_attr($type); ?>"
+                            data-agregatirovanie="<?php echo esc_attr($agregatirovanie); ?>"
+                            data-kolich-estvoryadov="<?php echo esc_attr($kolich_estvoryadov); ?>"
+                            data-rasstoyaniemezhdu-ryadami="<?php echo esc_attr($rasstoyaniemezhdu_ryadami); ?>">
 
-.product-card__title a:hover {
-    text-decoration: underline;
-}
+                            <!-- Левая часть: изображение -->
+                            <div class="product-card__media">
+                                <?php
+                                $gallery = get_field('product_gallery');
 
-/* Подзаголовок / описание */
-.product-card__subtitle,
-.product-card__excerpt {
-    margin-top: 10px;
-    color: #444;
-    font-size: 14px;
-}
+                                if ($gallery && is_array($gallery)) :
+                                ?>
+                                    <div class="product-slider" data-slider data-slides="<?php echo count($gallery); ?>">
+                                        <div class="product-slider__track">
+                                            <?php foreach ($gallery as $image) :
 
-/* Нижний блок */
-.product-card__actions {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding:20px;
-}
+                                                // ACF Gallery может вернуть ID или Array
+                                                if (is_array($image)) {
+                                                    $img_html = wp_get_attachment_image(
+                                                        $image['ID'],
+                                                        'large',
+                                                        false,
+                                                        [
+                                                            'class' => 'product-slider__image',
+                                                            'loading' => 'lazy',
+                                                        ]
+                                                    );
+                                                } else {
+                                                    $img_html = wp_get_attachment_image(
+                                                        $image,
+                                                        'large',
+                                                        false,
+                                                        [
+                                                            'class' => 'product-slider__image',
+                                                            'loading' => 'lazy',
+                                                        ]
+                                                    );
+                                                }
+                                            ?>
+                                                <div class="product-slider__slide">
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <?php echo $img_html; ?>
+                                                    </a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
 
-/* Чекбоксы */
-.product-card__checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    cursor: pointer;
-}
+                                        <?php if (count($gallery) > 1) : ?>
+                                            <button class="product-slider__nav product-slider__nav--prev" type="button">‹</button>
+                                            <button class="product-slider__nav product-slider__nav--next" type="button">›</button>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-.product-card__checkbox input {
-    width: 18px;
-    height: 18px;
-    accent-color: #e30f1b;
-}
+                            <!-- Правая часть: контент -->
+                            <div class="product-card__body">
 
-/* Кнопка */
-.product-card__btn {
-    margin-left: auto;
-    background: #e30f1b;
-    color: #fff;
-    padding: 12px 30px;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 2px;
-    transition: background .3s;
-}
+                                <h3 class="product-card__title">
+                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                </h3>
 
-.product-card__btn:hover {
-    background: #c00e18;
-}
-@media (max-width: 768px) {
-    .product-card--horizontal {
-        flex-direction: column;
-    }
+                                <?php if ($subtitle) : ?>
+                                    <div class="product-card__subtitle">
+                                        <?php echo esc_html($subtitle); ?>
+                                    </div>
+                                <?php endif; ?>
 
-    .product-card__media {
-        max-width: 100%;
-    }
+                                <?php if (has_excerpt()) : ?>
+                                    <div class="product-card__excerpt">
+                                        <?php the_excerpt(); ?>
+                                    </div>
+                                <?php endif; ?>
 
-    .product-card__btn {
-        margin-left: 0;
-        width: 100%;
-        text-align: center;
-    }
-}
+                                <div class="product-card__actions">
+                                    <label class="product-card__checkbox">
+                                        <input type="checkbox">
+                                        <span>Додати в порівняння</span>
+                                    </label>
 
+                                    <label class="product-card__checkbox">
+                                        <input type="checkbox">
+                                        <span>У обране</span>
+                                    </label>
 
-/* ===== PRODUCT SLIDER ===== */
-.product-slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-}
+                                    <a href="<?php the_permalink(); ?>" class="product-card__btn">
+                                        Детальніше
+                                    </a>
+                                </div>
 
-.product-slider__track {
-    display: flex;
-    transition: transform 0.4s ease;
-    height: 100%;
-}
-
-.product-slider__slide {
-    min-width: 100%;
-    height: 100%;
-}
-
-.product-slider__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* Навигация */
-.product-slider__nav {
-    position: absolute;
-    top: 44%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border-radius: 0px;
-    background: rgba(227, 15, 27, 0.95);
-    color: #fff;
-    border: none;
-    font-size: 26px;
-    line-height: 42px;
-    cursor: pointer;
-    z-index: 2;
-    transition: background 0.3s, opacity 0.3s;
-}
-
-.product-slider__nav:hover {
-    background: #c00e18;
-}
-
-.product-slider__nav--prev {
-    left: 0px;
-}
-
-.product-slider__nav--next {
-    right: 0px;
-}
-
-/* Скрываем стрелки если один слайд */
-.product-slider[data-slides="1"] .product-slider__nav {
-    display: none;
-}
-.woocommerce img, .woocommerce-page img {
-    height: 238px;
-    max-width: 100%;
-}
-/* Mobile */
-@media (max-width: 768px) {
-    .product-slider {
-        min-height: 220px;
-    }
-}
-
-                    </style>
-                   
-
-                        <!-- Обычная структура карточки для других категорий -->
-                   <article class="product-card product-card--horizontal"
-    data-sku="<?php echo esc_attr($sku ?: ''); ?>"
-    data-model="<?php echo esc_attr($model); ?>"
-    data-type="<?php echo esc_attr($type); ?>"
-    data-agregatirovanie="<?php echo esc_attr($agregatirovanie); ?>"
-    data-kolich-estvoryadov="<?php echo esc_attr($kolich_estvoryadov); ?>"
-    data-rasstoyaniemezhdu-ryadami="<?php echo esc_attr($rasstoyaniemezhdu_ryadami); ?>">
-
-    <!-- Левая часть: изображение -->
-<div class="product-card__media">
-    <?php
-    $gallery = get_field('product_gallery');
-
-    if ($gallery && is_array($gallery)) :
-    ?>
-        <div class="product-slider" data-slider data-slides="<?php echo count($gallery); ?>">
-            <div class="product-slider__track">
-                <?php foreach ($gallery as $image) :
-
-                    // ACF Gallery может вернуть ID или Array
-                    if (is_array($image)) {
-                        $img_html = wp_get_attachment_image(
-                            $image['ID'],
-                            'large',
-                            false,
-                            [
-                                'class' => 'product-slider__image',
-                                'loading' => 'lazy',
-                            ]
-                        );
-                    } else {
-                        $img_html = wp_get_attachment_image(
-                            $image,
-                            'large',
-                            false,
-                            [
-                                'class' => 'product-slider__image',
-                                'loading' => 'lazy',
-                            ]
-                        );
-                    }
-                ?>
-                    <div class="product-slider__slide">
-                        <a href="<?php the_permalink(); ?>">
-                            <?php echo $img_html; ?>
-                        </a>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-
-            <?php if (count($gallery) > 1) : ?>
-                <button class="product-slider__nav product-slider__nav--prev" type="button">‹</button>
-                <button class="product-slider__nav product-slider__nav--next" type="button">›</button>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
-</div>
-
-
-
-
-
-    <!-- Правая часть: контент -->
-    <div class="product-card__body">
-
-        <h3 class="product-card__title">
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </h3>
-
-        <?php if ($subtitle) : ?>
-            <div class="product-card__subtitle">
-                <?php echo esc_html($subtitle); ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if (has_excerpt()) : ?>
-            <div class="product-card__excerpt">
-                <?php the_excerpt(); ?>
-            </div>
-        <?php endif; ?>
-
-        <div class="product-card__actions">
-            <label class="product-card__checkbox">
-                <input type="checkbox">
-                <span>Додати в порівняння</span>
-            </label>
-
-            <label class="product-card__checkbox">
-                <input type="checkbox">
-                <span>У обране</span>
-            </label>
-
-            <a href="<?php the_permalink(); ?>" class="product-card__btn">
-                Детальніше
-            </a>
-        </div>
-
-    </div>
-</article>
+                            </div>
+                        </article>
+                    <?php endif; ?>
                     <?php endif; ?>
                     <?php
                 endwhile;
@@ -1465,7 +1591,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
 jQuery(document).ready(function($) {
     var $searchInput = $('#products-search-input');
-    var $productsGrid = $('.products-grid');
+    var $productsGrid = $('.products-grid, .products-flex, .category-products-slider');
     var $productsCards = $('.product-card');
     var $sectionSubtitle = $('.section__subtitle').last();
     
