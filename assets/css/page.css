@@ -1,0 +1,288 @@
+/**
+ * Page Styles
+ * Styles for static pages content
+ */
+
+/* Page content wrapper */
+.page-content {
+    padding-top: 7.5rem;
+    /* Account for fixed header */
+}
+
+@media screen and (max-width: 767px) {
+    .page-content {
+        padding-top: 3rem;
+        /* Mobile header height */
+    }
+}
+
+/* Inner page banner */
+.inner-page-banner {
+    background-size: cover;
+    background-position: center center;
+    min-height: 18.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.inner-page-banner .section__head {
+    margin-bottom: 0;
+}
+
+.inner-page-banner .section__titles {
+    margin: 0;
+}
+
+.inner-page-banner .section__titles--bg-blue {
+    background-color: #e30f1b;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    font-family: 'Proxima Nova Th', sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+    .inner-page-banner {
+        min-height: 12rem;
+    }
+
+    .inner-page-banner .section__titles--bg-blue {
+        font-size: 1.5rem;
+    }
+}
+
+/* Card2 styles for service pages */
+.card2 {
+    position: relative;
+    background-color: #fff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.card2__title {
+    display: flex;
+    font-size: 1.125rem;
+    margin-bottom: 1.3rem;
+    min-height: 2rem;
+    font-family: 'Proxima Nova Th', sans-serif;
+}
+
+.card2__title a {
+    color: #3c3c3c;
+    transition: all 0.3s;
+}
+
+.card2__title a:hover {
+    color: #e30f1b;
+}
+
+.card2__text {
+    line-height: 2;
+    color: #666;
+}
+
+/* Section styles */
+.section {
+    padding: 4rem 0;
+    position: relative;
+}
+
+@media screen and (max-width: 767px) {
+    .section {
+        padding: 2rem 0;
+    }
+}
+
+.section_grey {
+    background-image: url(../images/pattern1.png);
+    background-color: #efefef;
+}
+
+.section_blue {
+    background-color: #3c3c3c;
+}
+
+.section_blue .section__title,
+.section_blue .section__text {
+    color: #fff;
+}
+
+/* Section head */
+.section__head {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section__head_left {
+    text-align: left;
+}
+
+.section__aico {
+    display: flex;
+    align-items: center;
+    font-family: 'Proxima Nova Th', sans-serif;
+    color: #3c3c3c;
+    padding: 0 0.3rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.section__aico:before,
+.section__aico:after {
+    content: "";
+    height: 4px;
+    margin: 0.3rem 0.5rem;
+    width: 4px;
+    background: #3c3c3c;
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+.section__title {
+    text-align: center;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    font-family: 'Proxima Nova Th', sans-serif;
+    color: #3c3c3c;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .section__title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Content typography */
+.page-content h2 {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Proxima Nova Th', sans-serif;
+    color: #3c3c3c;
+}
+
+.page-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Proxima Nova Th', sans-serif;
+    color: #3c3c3c;
+}
+
+.page-content p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.page-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-content ul li {
+    list-style: disc;
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.page-content a {
+    color: #e30f1b;
+    transition: all 0.3s;
+}
+
+.page-content a:hover {
+    color: #c00d17;
+}
+
+.page-content strong {
+    font-family: 'Proxima Nova Th', sans-serif;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    font-family: 'Proxima Nova Th', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.btn--orange {
+    background-color: #e30f1b;
+    color: #fff;
+}
+
+.btn--orange:hover {
+    background-color: #c00d17;
+    color: #fff;
+}
+
+.btn--big {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* Wrap cols for grid layout */
+.wrap-cols {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1.3rem;
+}
+
+.wrap-cols_center {
+    justify-content: center;
+}
+
+.col {
+    position: relative;
+    padding: 0 1.3rem;
+}
+
+.col--4 {
+    width: 33.333%;
+}
+
+.col--5 {
+    width: 41.666%;
+}
+
+.col--6 {
+    width: 50%;
+}
+
+.col--8 {
+    width: 66.666%;
+}
+
+.col--10 {
+    width: 83.333%;
+}
+
+.col--12 {
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .col--sm-12 {
+        width: 100%;
+    }
+
+    .wrap-cols {
+        margin: 0 -0.625rem;
+    }
+
+    .col {
+        padding: 0 0.625rem;
+        margin-bottom: 1rem;
+    }
+}
